@@ -30,7 +30,8 @@ const [ItemCount, ItemCountSet] = useState(initial)
                                  }}
             >+</button><br />
             <button onClick={()=> { 
-              cart.length >= 10? alert("Son demasiados productos"): addOn(ItemCount)}} class="px-3" >Agregar al carrito</button>
+              ItemCount == 0 ? alert("No estas agregando nada al carrito") :
+              cart.length >= 10? alert("Son demasiados productos"): addOn(ItemCount)}} class="px-5" >Agregar al carrito</button>
 
         </div>
 
