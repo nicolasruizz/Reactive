@@ -1,29 +1,20 @@
 
-import React from 'react'
-import Item from './Item'
-import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom'
+import './ItemList.css'
+
 
 
 export default function ItemList({ result }) {
   return (<>
-  <div class="row">
+  <div className="row conteiner-fluid my-5 mx-5">
     {result.map(item =>
-        (<>  
-              <div class="card text-center col-2">
-            <img src={item.img} class="card-img-top" alt="..."></img>
-            <div class="card-body">
-            <p class="card-text h2">Precio: {item.price}</p>
+        (  <div key={item.id} className="card cardPad text-center col-sm-10 col-md-3 col-lg-2 py-2 m-4 bg-dark text-white">
+            <Link to={`/productos/${item.id}`} style={{ textDecoration: 'none' }} ><img src={item.img} onMouseOver={e =>(e.currentTarget.src=item.img2)} onMouseOut={s=>(s.currentTarget.src=item.img)} className="card-img" alt="..."></img>
+            <span className="card-text text-white">${item.price}</span>
+            <p><span className="text-white">Hasta 6 cuotas de ${parseInt(item.price/6)} </span></p></Link>
             </div>
-            <p class='card-text h6'>{item.detalle}</p>
-
-            <Item />
-            <ItemCount
-              initial ={0}
-              stock={3}
-              />
-            </div>
-            
-        </>))}
+          
+        ))}
         </div>
     
     </>

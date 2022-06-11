@@ -1,14 +1,15 @@
 import React,{useContext} from 'react'
 import carrito from '../images/carrito.png'
 import { Context } from '../Context/CartContext'
+import { Link } from 'react-router-dom'
 
 export default  function CartWidget(){
   let {cart} = useContext(Context)
   console.log(cart)
   return (
-     <button type="button">
+     <Link to="/cart"><button type="button" onClick={() => {<Link to="/cart"></Link>}}>
             <img src={carrito} width="30" height="30" alt=""></img>{cart.length}
-        </button>
+        </button></Link>
     
   )
 }

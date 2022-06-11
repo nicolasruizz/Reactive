@@ -1,0 +1,6 @@
+.cardPad {
+    padding: 0;
+}
+.cardPad:hover{
+    opacity: 0.8;
+}
