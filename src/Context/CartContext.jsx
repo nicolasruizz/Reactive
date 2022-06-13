@@ -2,6 +2,8 @@ import React, { createContext, useState, useEffect } from 'react'
 
 export const Context = createContext()
 
+//Desde donde pasamos las props que queremnos compartir a todos los componentes
+
 export default function CartContext({ children }) {
   const [cart, cartSet] = useState([])
   const [itemDet, itemDetSet] = useState([])
@@ -11,7 +13,6 @@ export default function CartContext({ children }) {
 
   }
   useEffect(() => {
-    console.log("render cartCon")
   }, [cart])
 
 
@@ -20,17 +21,14 @@ export default function CartContext({ children }) {
       .then(response => response.json())
       .then(data => {
         itemDetSet(data)
-        console.log(itemDet)
       })
       .catch(e => {
         console.log("no se puede acceder", e)
 
       })
       .finally(
-        console.log("fin")
       )
   }, [])
-
 
 
   return (

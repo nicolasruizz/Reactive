@@ -1,3 +1,20 @@
+### Buenas tardes a todos 
+
+# Bienvenidos a Andre The Store.
+
+Les presento mi proyecto, el cual consta de una tienda de lenceria femenina de forma inclusiva. Me estoy apoyando en las web de adidas/anastasia monaco para poder sacar ideas. En cuanto a las dependencias , no inclui otra aparte de las que se vieron, ya que opte por utilizar boostrap por cdn.
+En cuanto al proyecto la idea del mismo es ir intruduciendo cada vez mas efectos visuales para que la pagina llame la atención.
+En cuanto a las fotos las saque de internet, me esta costando conseguir fotos buenas, pero creo que es para todos igual, por eso mismo algunas de las cards tienen 1 foto y otras 2.
+Decidí no incluir el boton mostrar detalles ya que dichas paginas no lo muestran y se entiende que si seleccionas la card entras a ver detalles y me parecio mucho mas estetico.
+
+Desde ya estoy muy conforme con mi proyecto hasta ahora, se que puedo mejorar en lo visual , pero esta bastante avanzado en lo que incluye logica.
+
+
+# Saludos cordiales, nicolas ruiz
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

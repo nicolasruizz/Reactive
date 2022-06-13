@@ -7,6 +7,7 @@ import ItemDetailConteiner from './components/ItemDetailConteiner';
 import ItemListConteiner from './components/ItemListConteiner';
 import NavBar from './components/NavBar';
 import CartContext from './Context/CartContext';
+import 'bootstrap/dist/js/bootstrap'
 
 
 
@@ -19,16 +20,20 @@ const App = () => {
   <BrowserRouter>
   <NavBar />
   <Routes>
-      {/* Mostrar todos los productos */}
+      {/* Mostrar Index*/}
     <Route path='/' element={<Home/>} />
-    {/* Mostrar todos los datos de contacto */}
+    <Route path='/home' element={<Home/>} />
+    {/* Mostrar los datos de contacto */}
     <Route path='/contacto' element={<Contacto/>} />
-    {/* Mostrar los productos que estan enel carrito */}
+    {/* Mostrar los productos que estan en el carrito */}
     <Route path='/cart' element={<Cart/>} />
-{/* Mostrar un unico producto */}
-    <Route path='/productos/:idParams' element={<ItemDetailConteiner/>} />
-    {/* Mostrar todos los productos de una category */}
+    {/* Mostrar un unico producto */}
+    <Route path='/producto/:idParams' element={<ItemDetailConteiner/>} />
+    {/* Mostrar todos los productos de una categoria en especifica */}
     <Route path="/category/:idParams" element={<ItemListConteiner />} />
+    {/* Mostrar todos los productos */}
+
+    <Route path="/productos" element={<ItemListConteiner />} />
   </Routes>
   
   </BrowserRouter>

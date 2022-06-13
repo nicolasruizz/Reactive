@@ -3,15 +3,14 @@ import { useParams } from 'react-router-dom'
 import { Context } from '../Context/CartContext'
 import ItemDetail from './ItemDetail'
 
+// Detalle del item
 
 export default function ItemDetailConteiner() {
 let {itemDet} =useContext(Context)
 const {idParams}= useParams()
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(false);
-const [resultado, setResultado] = useState([]);
-
-console.log(idParams)
+const [resultado, setResultado] = useState();
 
 useEffect(() => {
     const productos = new Promise ((res,)=>{
@@ -26,7 +25,6 @@ useEffect(() => {
   })
   .finally(()=>{
     setLoading(false)
-    console.log("se realizo correctamente")
   })
       },0)
   
