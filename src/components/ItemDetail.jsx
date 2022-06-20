@@ -1,8 +1,20 @@
+import { useContext } from 'react'
 import {useState} from 'react'
+import { Context } from '../Context/CartContext'
 import ItemCount from './ItemCount'
 
 export default function ItemDetail({item}) {
 const [img, setImg] = useState(item.img)
+const [qty, qtySet] = useState(0)
+const {isInCart, addItem} = useContext(Context)
+
+const onAdd =() =>{
+  alert("Agregaste "+ qty +" productos")
+  console.log(item.id)
+  isInCart(item.id)
+  console.log(isInCart(item.id))
+  addItem(item,qty)
+}
 
 //Como se muestra el detalle 
 
@@ -24,7 +36,7 @@ const [img, setImg] = useState(item.img)
         <span className='col-sm-10 col-md-7 col-lg-8'><strong>Detalle:</strong> <i> {item.detalle}</i></span>
         
         <div>
-        <ItemCount />  
+        <ItemCount itemCount={qty} itemCountSet={qtySet} onAdd={onAdd}  />  
       </div>
       <span className='col-8'><i> Tambien lo tenes hasta 6 cuotas de SIN INTERES de ${parseInt(item.price/6)}</i></span>
 

@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 // BOTON DE CARRITO
 
 export default  function CartWidget(){
-  let {cart} = useContext(Context)
+  let {getItememQty} = useContext(Context)
   return (
      <Link to="/cart"><button type="button" onClick={() => {<Link to="/cart"></Link>}}>
-            <img src={carrito} width="30" height="30" alt=""></img>{cart.length}
+            <img src={carrito} width="30" height="30" alt=""></img>{getItememQty()}
         </button></Link>
     
   )

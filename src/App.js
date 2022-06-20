@@ -8,6 +8,7 @@ import ItemListConteiner from './components/ItemListConteiner';
 import NavBar from './components/NavBar';
 import CartContext from './Context/CartContext';
 import 'bootstrap/dist/js/bootstrap'
+import TestEventos from "./components/TestEventos";
 
 
 
@@ -32,8 +33,9 @@ const App = () => {
     {/* Mostrar todos los productos de una categoria en especifica */}
     <Route path="/category/:idParams" element={<ItemListConteiner />} />
     {/* Mostrar todos los productos */}
-
     <Route path="/productos" element={<ItemListConteiner />} />
+    {/* Ruta test*/ }
+    <Route path="/test" element={<TestEventos />} />
   </Routes>
   
   </BrowserRouter>

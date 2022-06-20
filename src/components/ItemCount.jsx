@@ -1,14 +1,12 @@
 import React from 'react'
-import { useState,useEffect,useContext } from 'react';
+import { useEffect,useContext } from 'react';
 import { Context } from '../Context/CartContext';
+import { Link } from 'react-router-dom'
 
-export default function ItemCount() {
-let{addOn,cart} =useContext(Context)
-const [ItemCount, ItemCountSet] = useState(0)
+export default function ItemCount({itemCount,itemCountSet,onAdd}) {
+let {cart} =useContext(Context)
+
   
-    useEffect(() => {
-    
-    }, [ItemCount])
 
     useEffect(() => {
     
@@ -20,17 +18,18 @@ const [ItemCount, ItemCountSet] = useState(0)
     <>
         <div className='p-3'>
           <button  onClick={() =>{
-                    ItemCount > 0 ? ItemCountSet(ItemCount - 1) : ItemCountSet(ItemCount);
+                    itemCount > 0 ? itemCountSet(itemCount - 1) : itemCountSet(itemCount);
                                 }}
-        >-</button><span className='p-5'>{ItemCount}</span>
+        >-</button><span className='p-5'>{itemCount}</span>
         <button onClick={() =>{
-                    ItemCount < 4 ? ItemCountSet(ItemCount + 1) : ItemCountSet(ItemCount);
+                    itemCount < 4 ? itemCountSet(itemCount + 1) : itemCountSet(itemCount);
                                  }}
             >+</button><br />
             <button onClick={()=> { 
-              ItemCount == 0 ? alert("No estas agregando nada al carrito") :
-              cart.length >= 10? alert("Son demasiados productos"): addOn(ItemCount)}} className="px-5" >Agregar</button>
+              itemCount == 0 ? alert("No estas agregando nada al carrito") :
+              cart.length >= 10? alert("Son demasiados productos"): onAdd()}} className="px-5" >Agregar</button>
 
+            {cart.length >= 1 && <Link to="/cart" onClick={() => {<Link to="/cart"></Link>}}><button className='px-5'> Finalizar Compra</button></Link>}
         </div>
 
     </>)
