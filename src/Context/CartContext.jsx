@@ -7,7 +7,6 @@ export const Context = createContext()
 export default function CartContext({ children }) {
   const [cart, cartSet] = useState([])
   const [itemDet, itemDetSet] = useState([])
-  const [finalizarC, finalizarCSet] =useState(false)
 
   // Metodo Some- Nos indica si el producto esta en el carrito o no , Retorna un boolean
 const isInCart = (id) =>{
@@ -34,6 +33,7 @@ const isInCart = (id) =>{
 
 }
 console.log(cart)
+
 //Borra item del carrito- Por id y retorna un nuevo array para si dicho producto
 const deleteItem = (id) =>{
   return cartSet(cart.filter(x => x.id !== id))
@@ -49,7 +49,7 @@ const getItememQty = () =>{
   return cart.reduce((acc,x) => acc += x.qty,0)
 
 }
-
+// suma total del carrito
 const getItemPrice = () =>{
   return cart.reduce((acc,x) => acc += x.qty * x.price,0 )
 }
@@ -75,6 +75,6 @@ useEffect(() => {
 
 
   return (
-    <Context.Provider value={{cart, cartSet, itemDet,itemDetSet,finalizarC,isInCart,addItem,getItememQty,emptyCart,getItemPrice,getItemPrice}}>{children}</Context.Provider>
+    <Context.Provider value={{cart, cartSet, itemDet,itemDetSet,isInCart,addItem,getItememQty,emptyCart,getItemPrice,deleteItem}}>{children}</Context.Provider>
   )
 }
