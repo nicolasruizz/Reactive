@@ -1,18 +1,32 @@
 import React from 'react'
 import { useContext } from 'react'
 import { Context } from '../Context/CartContext'
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
 let {cart , emptyCart,getItemPrice,deleteItem} = useContext(Context)
 
   return (
     <>
-    {cart.length >= 1 && <><h2 className='mt-3 ml-1'>Productos</h2> {cart.map(item =>(
-      <div className='row mx-4 my-1' key={item.id}>
-        <img src={item.img} width={50} height={50} alt={item.name}></img>
-        <span>{item.name} x {item.qty} $ {item.price*item.qty}</span>
-        <button className='ml-5' onClick={()=>{deleteItem(item.id)}}>X</button></div>))} <hr></hr><span className='mb-4 mx-5'> Total a pagar : {getItemPrice()}</span><button className='ml-4' onClick={()=>emptyCart()}> Vaciar Carrito</button></>}
-    {cart.length === 0 &&<h1> No hay Prodructos en el carrito</h1>}
+    {cart.length >= 1 ?<> 
+    <div className='border rounded bg-dark text-white my-1 col-md-12 col-xl-6 '><h2 className='text-center'>Productos</h2> <div></div>{cart.map(item =>(
+      <div className='row mx-4 my-1 p-3  border rounded ' key={item.id}>
+        <img className='  col-4 col-md-2 rounded-circle' src={item.img} width={90} height={90  } alt={item.name}></img>
+        <strong className='d-flex align-items-center mx-auto col-5 col-xl-3'>{item.name} x {item.qty} = ${item.price*item.qty}</strong>
+        <button className=' rounded-circle bg-dark text-white px-4 col-2' onClick={()=>{deleteItem(item.id)}}>X</button>
+        </div>))}
+        
+        <div className=''>
+        <hr></hr>
+        <strong className='mb-4 mx-5 col-12'> Total a pagar : ${getItemPrice()}</strong><br></br>
+        <strong className='mb-4 mx-5 col-12'> Hasta 6 cuotas de : ${parseInt(getItemPrice()/6)}</strong>
+        <button className='mx-1 my-5 rounded bg-dark text-white px-1 col-12 ' onClick={()=>emptyCart()}> Vaciar Carrito</button> </div>
+    </div></>
+         : cart.length === 0 && <>
+         <div>
+            <h1> No hay Prodructos en el carrito</h1>
+            <Link to="/productos"><button className='mx-1 my-5 rounded bg-dark text-white px-1 col-3 ' > Ir a productos</button></Link>
+         </div></>}
     </>
   )
 }
