@@ -1,51 +1,60 @@
 
 
-import { useContext, useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Context } from '../Context/CartContext';
 import ItemList from './ItemList';
 
 //Como se muestra dicha lista de items
 
 export default function ItemListConteiner() {
-  const { itemDet } = useContext(Context)
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [resultado, setResultado] = useState([]);
+  const [result, setResult] = useState([]);
   const {idParams}= useParams()
   
-// Promesa para mostrar Lista de Items
- useEffect(() => {
-  const articulos = new Promise ((res,)=>{
-    setTimeout(()=>{
-      
-      (idParams === undefined) ? res(itemDet) : res(itemDet.filter(item => item.category === idParams))
-articulos
-.then((result)=>{
-  setResultado(result)
-})
-.catch((error)=>{
-  setError(error)
-})
-.finally(()=>{
-  setLoading(false)
+ 
 
-})
-    },2000)
+useEffect(() => {
+const db= getFirestore()
+const productsCollection= collection(db,'items')
+if(idParams){ 
+const q= query(productsCollection, where('category','==',idParams));
+getDocs(q).then(snapshot =>{
+  setResult(snapshot.docs.map((doc)=>({...doc.data(),id:doc.id})));
+}).catch((error)=>{
+   setError(error)
+ }).finally(()=>{
+ setLoading(false);
+ })
 
+}else{
+  getDocs(productsCollection)
+  .then(snapshot =>{
+    setResult(snapshot.docs.map((doc)=>({...doc.data(),id:doc.id})));
   })
-},[idParams])
+  .catch((error)=>{
+     setError(error)
+   })
+   .finally(()=>{
+   setLoading(false);
+   })
+}
+
+
+}, [idParams])
+
 
 
   return (
       <>
       <div>{loading && <div className='text-center h1'> Loading...</div>}</div>
       <div>{error && 'Hubo un error al cartar el catalogo'}</div>
-      <div>{resultado && <>
+      <div>{result && <>
 
       
-    <ItemList result= {resultado} 
-              /></>}</div>
+     <ItemList result= {result} 
+              /> </>}</div>
     </>
   )
 }

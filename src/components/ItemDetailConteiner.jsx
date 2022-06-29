@@ -1,42 +1,38 @@
-import React, { useState , useEffect, useContext} from 'react'
+import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Context } from '../Context/CartContext'
 import ItemDetail from './ItemDetail'
-
 // Detalle del item
 
 export default function ItemDetailConteiner() {
-let {itemDet} =useContext(Context)
 const {idParams}= useParams()
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(false);
-const [resultado, setResultado] = useState();
+const [result, setResult] = useState();
 
 useEffect(() => {
-    const productos = new Promise ((res,)=>{
-      setTimeout(()=>{
-        (!idParams) ? res() : res(itemDet.find(item => item.id == idParams))
-    productos
-  .then((result)=>{
-    setResultado(result)
-  })
+
+  const db = getFirestore()
+  const productRef = doc(db,'items',idParams)
+  getDoc(productRef)
+  .then(snapshot =>{
+    setResult({...snapshot.data(), id:snapshot.id})})
   .catch((error)=>{
     setError(error)
   })
-  .finally(()=>{
-    setLoading(false)
-  })
-      },0)
-  
-    })
-  },[idParams])
+   .finally(()=>{
+   setLoading(false);
+   })
+
+
+},[idParams])
 
 
   return (
     <><div>{loading && <div className='text-center h1'> Loading...</div>}</div>
     <div>{error && 'Hubo un error al cartar el catalogo'}</div>
-    <div>{resultado &&
-    <ItemDetail item ={resultado} />}
+    <div>{result &&
+    <ItemDetail item ={result} />}
     </div>
     </>
   )

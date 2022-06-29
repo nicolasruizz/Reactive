@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../images/logo.jpeg'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
+import CategoriesNav from './CategoriesNav'
 
 //BARRA DE NAVEGACIÓN
 
@@ -22,14 +23,13 @@ export default function NavBar(){
             <li className="nav-item">
               <Link className="nav-link" to="/contacto">Contacto </Link>
             </li>
+            <li><Link className="nav-link" to="/productos">Todos los productos</Link></li>
           
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle drop" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Productos </a>
+               Categorias </a>
             <ul className="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-              <li><Link className="nav-link" to="/productos">Todos los productos</Link></li>
-              <li><Link className="nav-link" to="/category/Entera">Enteras</Link></li>
-              <li><Link className="nav-link" to="/category/Dospartes">En Dos Partes</Link></li>
+              <CategoriesNav />
             </ul>
             </li>
               </ul>

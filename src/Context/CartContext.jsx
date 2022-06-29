@@ -59,19 +59,6 @@ useEffect(() => {
     console.log(cart)
   }, [cart])
 
-useEffect(() => {
-    fetch("https://mocki.io/v1/2859acb4-f0d4-4d81-aca7-a49807374606",)
-      .then(response => response.json())
-      .then(data => {
-        itemDetSet(data)
-      })
-      .catch(e => {
-        console.log("no se puede acceder", e)
-
-      })
-      .finally(
-      )
-  }, [])
 
 
   return (

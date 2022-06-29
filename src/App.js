@@ -10,24 +10,15 @@ import CartContext from './Context/CartContext';
 import 'bootstrap/dist/js/bootstrap'
 import TestEventos from "./components/TestEventos";
 
-import { initializeApp } from "firebase/app";
+
+
 
 
 
 
 const App = () => {
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDxRHk87AOdtmiw3CZSNCvnFtzppnKBDYg",
-    authDomain: "andrethestore.firebaseapp.com",
-    projectId: "andrethestore",
-    storageBucket: "andrethestore.appspot.com",
-    messagingSenderId: "953400759717",
-    appId: "1:953400759717:web:c8ce4d67272f07bc1f444c"
-  };
-  
-  
-initializeApp(firebaseConfig);
+
   
   return (<> 
    <CartContext className="body">
@@ -49,6 +40,7 @@ initializeApp(firebaseConfig);
     <Route path="/productos" element={<ItemListConteiner />} />
     {/* Ruta test*/ }
     <Route path="/test" element={<TestEventos />} />
+    
   </Routes>
   
   </BrowserRouter>

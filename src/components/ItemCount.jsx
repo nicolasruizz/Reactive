@@ -3,7 +3,7 @@ import { useEffect,useContext } from 'react';
 import { Context } from '../Context/CartContext';
 import { Link } from 'react-router-dom'
 
-export default function ItemCount({itemCount,itemCountSet,onAdd}) {
+export default function ItemCount({itemCount,itemCountSet,onAdd,stock}) {
 let {cart} =useContext(Context)
 
   
@@ -22,7 +22,7 @@ let {cart} =useContext(Context)
                                 }}
         >-</button><span className='p-5'>{itemCount}</span>
         <button onClick={() =>{
-                    itemCount < 4 ? itemCountSet(itemCount + 1) : itemCountSet(itemCount);
+                    itemCount < stock ? itemCountSet(itemCount + 1) : itemCountSet(itemCount);
                                  }}
             >+</button><br />
             <button onClick={()=> { 
