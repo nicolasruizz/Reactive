@@ -12,7 +12,7 @@ useEffect(() => {
         console.log(snapshot)
         categorySet(snapshot.docs.map((doc)=> doc.data().name))})
         .finally(()=>{
-            console.log(category);
+            ;
             })
     
 

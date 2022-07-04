@@ -3,13 +3,14 @@ import logo from '../images/logo.jpeg'
 import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 import CategoriesNav from './CategoriesNav'
+import './NavBar.css'
 
 //BARRA DE NAVEGACIÓN
 
 export default function NavBar(){
     return( <>
-        <div className='text-center bg-dark my-2 text-white'><span> Envios gratis a partir de los $6000 // Hasta 6 cuotas sin interes con todas las tarjetas </span></div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className='text-center my-2 text-white transparent'><span> Envios gratis a partir de los $6000 // Hasta 6 cuotas sin interes con todas las tarjetas </span></div>
+        <nav className="navbar navbar-expand-lg navbar-dark  transparent">
         <Link to="/" className='nav.link' style={{ textDecoration: 'none' }}> <img src={logo} className='rounded-circle' width="30" height="30" alt="Logo"></img></Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

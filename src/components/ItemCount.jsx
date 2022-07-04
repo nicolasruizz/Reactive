@@ -26,7 +26,7 @@ let {cart} =useContext(Context)
                                  }}
             >+</button><br />
             <button onClick={()=> { 
-              itemCount == 0 ? alert("No estas agregando nada al carrito") :
+              itemCount === 0 ? alert("No estas agregando nada al carrito") :
               cart.length >= 10? alert("Son demasiados productos"): onAdd()}} className="px-5" >Agregar</button>
 
             {cart.length >= 1 && <Link to="/cart" onClick={() => {<Link to="/cart"></Link>}}><button className='px-5'> Finalizar Compra</button></Link>}

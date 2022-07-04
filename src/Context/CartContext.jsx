@@ -5,8 +5,10 @@ export const Context = createContext()
 //Desde donde pasamos las props que queremnos compartir a todos los componentes
 
 export default function CartContext({ children }) {
-  const [cart, cartSet] = useState([])
+  const [cart, cartSet] =  useState(JSON.parse(localStorage.getItem('productos')) ?? []);
   const [itemDet, itemDetSet] = useState([])
+  const [disabled, disabledSet] = useState(true)
+  const [idBuy,idBuySet] =useState("")
 
   // Metodo Some- Nos indica si el producto esta en el carrito o no , Retorna un boolean
 const isInCart = (id) =>{
@@ -25,7 +27,7 @@ const isInCart = (id) =>{
       array2[indiceProd].qty += qty
       console.log(array2)
       cartSet(array2)
-      console.log(cart)
+      
     } else{
       cartSet([...cart,newItem])
       
@@ -56,12 +58,12 @@ const getItemPrice = () =>{
 
 
 useEffect(() => {
-    console.log(cart)
+  localStorage.setItem('productos', JSON.stringify(cart))
   }, [cart])
 
 
 
   return (
-    <Context.Provider value={{cart, cartSet, itemDet,itemDetSet,isInCart,addItem,getItememQty,emptyCart,getItemPrice,deleteItem}}>{children}</Context.Provider>
+    <Context.Provider value={{cart, cartSet, itemDet,itemDetSet,isInCart,addItem,getItememQty,emptyCart,getItemPrice,deleteItem,disabled,disabledSet,idBuy,idBuySet}}>{children}</Context.Provider>
   )
 }

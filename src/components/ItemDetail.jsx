@@ -22,13 +22,13 @@ const onAdd =() =>{
     <div className="row conteiner-fluid mx-auto w-75 p-3 bg-dark text-white my-1 rounded">
       <ul className='d-inline'>
         <button type="button" onClick={()=>{ setImg(item.img)}}>
-            <img src={item.img} width="60" height="60" alt=""></img>
+            <img src={item.img} width="60" height="60" className='padding' alt={item.name}></img>
         </button>
         <button type="button" onClick={()=>{ setImg(item.img2)}}>
-            <img src={item.img2} width="60" height="60" alt=""></img>
+            <img src={item.img2} width="60" height="60" alt={item.name}></img>
         </button>
         </ul>
-      <div className='card col-sm-12 col-lg-5'><img src={img}></img></div>
+      <div className='card col-sm-12 col-lg-5'><img src={img} alt={item.name}></img></div>
       <div className='col-sm-12 col-lg-5 row'>
 
         <span className='col-sm-10 col-md-7 col-lg-8'><strong>Nombre:</strong> <i> {item.name}</i></span>
