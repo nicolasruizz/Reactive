@@ -10,6 +10,7 @@ Decidí no incluir el boton mostrar detalles ya que dichas paginas no lo muestra
 Desde ya estoy muy conforme con mi proyecto y con lo aprendido hasta hoy en día, se que puedo mejorar en lo visual, pero la practica hace al maestro.
 
 Gif= [https://ibb.co/zPSyjMR](https://ibb.co/zPSyjMR)
+
 ![React App - Google Chrome 2022-07-17 17-51-09](https://user-images.githubusercontent.com/98553580/179425898-ee1c15b6-6f89-45c7-97d4-13cec81007e3.gif)
 
 Deploy = [https://andrethestore.web.app/](https://andrethestore.web.app/)
