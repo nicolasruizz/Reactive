@@ -2,13 +2,16 @@
 
 # Bienvenidos a Andre The Store.
 
-Les presento mi proyecto, el cual consta de una tienda de lenceria femenina. Me estoy apoyando en las web de adidas/anastasia monaco para poder sacar ideas. En cuanto a las dependencias , inclui las que se vieron en el curso, y aparte  boostrap/reactstrap para lo visual , formik para los formularios y sweetalert para los alertas. 
+Les presento mi proyecto, el cual consta de una tienda de lenceria femenina. Me estoy apoyando en las web de adidas/anastasia monaco para poder sacar ideas.
+En cuanto a las dependencias , inclui las que se vieron en el curso, y aparte  boostrap/reactstrap para lo visual , formik para los formularios y sweetalert para los alertas. 
 Las fotos las saque de internet, las cards tienen 1 foto o 2, dependen de la card.
 Decidí no incluir el boton mostrar detalles ya que dichas paginas no lo muestran y se entiende que si seleccionas la card entras a ver detalles y me parecio mucho mas estetico.
 
 Desde ya estoy muy conforme con mi proyecto y con lo aprendido hasta hoy en día, se que puedo mejorar en lo visual, pero la practica hace al maestro.
 
 Gif= [https://ibb.co/zPSyjMR](https://ibb.co/zPSyjMR)
+![React App - Google Chrome 2022-07-17 17-51-09](https://user-images.githubusercontent.com/98553580/179425898-ee1c15b6-6f89-45c7-97d4-13cec81007e3.gif)
+
 Deploy = [https://andrethestore.web.app/](https://andrethestore.web.app/)
 
 # Saludos cordiales, nicolas ruiz
