@@ -2,13 +2,14 @@
 
 # Bienvenidos a Andre The Store.
 
-Les presento mi proyecto, el cual consta de una tienda de lenceria femenina de forma inclusiva. Me estoy apoyando en las web de adidas/anastasia monaco para poder sacar ideas. En cuanto a las dependencias , no inclui otra aparte de las que se vieron, ya que opte por utilizar boostrap por cdn.
-En cuanto al proyecto la idea del mismo es ir intruduciendo cada vez mas efectos visuales para que la pagina llame la atención.
-En cuanto a las fotos las saque de internet, me esta costando conseguir fotos buenas, pero creo que es para todos igual, por eso mismo algunas de las cards tienen 1 foto y otras 2.
+Les presento mi proyecto, el cual consta de una tienda de lenceria femenina. Me estoy apoyando en las web de adidas/anastasia monaco para poder sacar ideas. En cuanto a las dependencias , inclui las que se vieron en el curso, y aparte  boostrap/reactstrap para lo visual , formik para los formularios y sweetalert para los alertas. 
+Las fotos las saque de internet, las cards tienen 1 foto o 2, dependen de la card.
 Decidí no incluir el boton mostrar detalles ya que dichas paginas no lo muestran y se entiende que si seleccionas la card entras a ver detalles y me parecio mucho mas estetico.
 
-Desde ya estoy muy conforme con mi proyecto hasta ahora, se que puedo mejorar en lo visual , pero esta bastante avanzado en lo que incluye logica.
+Desde ya estoy muy conforme con mi proyecto y con lo aprendido hasta hoy en día, se que puedo mejorar en lo visual, pero la practica hace al maestro.
 
+Gif= [https://ibb.co/zPSyjMR](https://ibb.co/zPSyjMR)
+Deploy = [https://andrethestore.web.app/](https://andrethestore.web.app/)
 
 # Saludos cordiales, nicolas ruiz
 

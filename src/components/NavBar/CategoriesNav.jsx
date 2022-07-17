@@ -9,7 +9,6 @@ useEffect(() => {
     const categoriesList = collection(db,'categories');
     getDocs(categoriesList).
     then(snapshot =>{
-        console.log(snapshot)
         categorySet(snapshot.docs.map((doc)=> doc.data().name))})
         .finally(()=>{
             ;

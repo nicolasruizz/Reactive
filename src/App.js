@@ -1,18 +1,15 @@
 
 import 'bootstrap/dist/js/bootstrap';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Cart from './components/Cart';
-import Checkout from './components/Checkout';
-import Contacto from './components/Contacto';
-import Home from './components/Home';
-import ItemDetailConteiner from './components/ItemDetailConteiner';
-import ItemListConteiner from './components/ItemListConteiner';
-import NavBar from './components/NavBar';
+import Cart from './components/Cart/Cart';
+import Checkout from './components/Cart/Checkout';
+import Contacto from './components/Home/Contacto';
+import { Footer } from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import ItemDetailConteiner from './components/ItemDetail/ItemDetailConteiner';
+import ItemListConteiner from './components/ItemList/ItemListConteiner';
+import NavBar from './components/NavBar/NavBar';
 import CartContext from './Context/CartContext';
-
-
-
-
 
 
 
@@ -44,7 +41,7 @@ const App = () => {
   
     
   </Routes>
-  
+  <Footer />
   </BrowserRouter>
      </CartContext>
     </>

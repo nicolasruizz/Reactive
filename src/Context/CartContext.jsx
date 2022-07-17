@@ -1,14 +1,23 @@
 import { createContext, useState, useEffect } from 'react'
-
+import Swal from 'sweetalert2'
 export const Context = createContext()
 
 //Desde donde pasamos las props que queremnos compartir a todos los componentes
 
 export default function CartContext({ children }) {
   const [cart, cartSet] =  useState(JSON.parse(localStorage.getItem('productos')) ?? []);
-  const [itemDet, itemDetSet] = useState([])
   const [disabled, disabledSet] = useState(true)
   const [idBuy,idBuySet] =useState("")
+
+
+  //Error
+  const error = () =>{ 
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'A ocurrido un error',
+      footer: 'Vuelve a intertarlo'
+    })}
 
   // Metodo Some- Nos indica si el producto esta en el carrito o no , Retorna un boolean
 const isInCart = (id) =>{
@@ -18,14 +27,12 @@ const isInCart = (id) =>{
   // Agrega item al carrito sin pisar los agregados,
   function addItem(item,qty) {
     const newItem = {...item,qty}
-    console.log(newItem.id)
 
     if(isInCart(newItem.id)){
       const buscarProd = cart.find(x => x.id === newItem.id )
       const indiceProd = cart.indexOf(buscarProd)
       const array2 =[...cart]
-      array2[indiceProd].qty += qty
-      console.log(array2)
+      array2[indiceProd].qty + qty > newItem.stock ? array2[indiceProd].qty  = (error(),newItem.stock) : array2[indiceProd].qty += qty
       cartSet(array2)
       
     } else{
@@ -34,7 +41,6 @@ const isInCart = (id) =>{
     }
 
 }
-console.log(cart)
 
 //Borra item del carrito- Por id y retorna un nuevo array para si dicho producto
 const deleteItem = (id) =>{
@@ -64,6 +70,6 @@ useEffect(() => {
 
 
   return (
-    <Context.Provider value={{cart, cartSet, itemDet,itemDetSet,isInCart,addItem,getItememQty,emptyCart,getItemPrice,deleteItem,disabled,disabledSet,idBuy,idBuySet}}>{children}</Context.Provider>
+    <Context.Provider value={{cart, cartSet,isInCart,addItem,getItememQty,emptyCart,getItemPrice,deleteItem,disabled,disabledSet,idBuy,idBuySet,error}}>{children}</Context.Provider>
   )
 }

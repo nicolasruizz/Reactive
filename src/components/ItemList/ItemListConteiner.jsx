@@ -1,9 +1,9 @@
-
-
+import { Spinner } from 'reactstrap'
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
+import '../Home/Loading.css'
 
 //Como se muestra dicha lista de items
 
@@ -48,7 +48,12 @@ getDocs(q).then(snapshot =>{
 
   return (
       <>
-      <div>{loading && <div className='text-center h1'> Loading...</div>}</div>
+      <div>{loading && 
+      <div className='divSpinnerPadre'>
+        <div className='divSpinnerHijo'>
+          <Spinner color='dark' className='spinnerCarga'/> 
+        </div>
+      </div>}</div>
       <div>{error && 'Hubo un error al cartar el catalogo'}</div>
       <div>{result && <>
 

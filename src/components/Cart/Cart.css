@@ -29,15 +29,15 @@
         
 .myButton1 {
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #b94444 5%, #b94444 100%);
-	background-color:#b94444;
+	background:linear-gradient(to bottom, #ffffff 5%, #dcdcdc 100%);
+	background-color:#ffffff;
 	border-radius:6px;
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color: black;;
 	font-family:Arial;
-	font-size:15px;
+	font-size:18px;
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
@@ -45,9 +45,9 @@
     height: 15% ;
 }
 .myButton1:hover {
-	background:linear-gradient(to bottom, #c76565 2%, #b94444 80%);
+	background:linear-gradient(to bottom, #0a0a0a 2%, #0a0a0a 80%);
 	background-color:#c5c5c5;
-	color: #222121;
+	color: white;
 	font-size: 20px;
 	text-shadow:0px 1px 0px #0a0a0a;
 	

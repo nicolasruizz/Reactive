@@ -1,0 +1,23 @@
+
+.followIg{
+    height: 20vh;
+    color:black;
+    background-color: black;
+}
+.igLyrics{
+    font-size: 44px;
+    font-weight: 750;
+}
+
+a a:link, a:visited,  a:hover, a:active{
+    text-decoration: none;
+}
+
+.divFooter{
+    height: 60vh;
+}
+.listD{
+    list-style: none;
+    text-decoration: none;
+}
+ 

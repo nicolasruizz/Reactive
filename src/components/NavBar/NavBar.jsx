@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from '../images/logo.jpeg'
-import CartWidget from './CartWidget'
+import logo from '../../images/logo.jpeg'
+import CartWidget from '../Cart/CartWidget'
 import { Link } from 'react-router-dom'
 import CategoriesNav from './CategoriesNav'
 import './NavBar.css'
